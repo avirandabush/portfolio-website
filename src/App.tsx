@@ -3,6 +3,11 @@ import { useState } from "react"
 import { Screen } from "./types/Screen"
 import TopBar from "./components/TopBar"
 import BottomDock from "./components/BottomDock"
+import HomeScreen from "./layouts/HomeScreen"
+import AboutScreen from "./layouts/AboutScreen"
+import IosProjectsScreen from "./layouts/IosProjectsScreen"
+import AndroidProjectsScreen from "./layouts/AndroidProjectsScreen"
+import ReactProjectsScreen from "./layouts/ReactProjectsScreen"
 
 function App() {
 
@@ -16,14 +21,14 @@ function App() {
         />
 
         <div className="content">
-          {activeScreen === Screen.Home && <h1>Home</h1>}
-          {activeScreen === Screen.About && <h1>About</h1>}
-          {activeScreen === Screen.iOS && <h1>iOS</h1>}
-          {activeScreen === Screen.Android && <h1>Android</h1>}
-          {activeScreen === Screen.React && <h1>React</h1>}
+          {activeScreen === Screen.Home && <HomeScreen />}
+          {activeScreen === Screen.About && <AboutScreen />}
+          {activeScreen === Screen.iOS && <IosProjectsScreen />}
+          {activeScreen === Screen.Android && <AndroidProjectsScreen />}
+          {activeScreen === Screen.React && <ReactProjectsScreen />}
         </div>
 
-        <BottomDock activeScreen={activeScreen} />
+        <BottomDock activeScreen={activeScreen} onNavigate={setActiveScreen} />
       </div>
     </div>
   )
