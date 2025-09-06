@@ -1,6 +1,7 @@
 import "./App.css"
 import { useState } from "react"
 import { Screen } from "./types/Screen"
+import TopBar from "./components/TopBar"
 
 function App() {
 
@@ -9,6 +10,9 @@ function App() {
   return (
     <div className="app">
       <div className="container">
+        <TopBar
+          onNavigate={setActiveScreen}
+        />
 
         {activeScreen === Screen.Home && <h1>Home</h1>}
         {activeScreen === Screen.About && <h1>About</h1>}

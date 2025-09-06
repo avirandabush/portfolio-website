@@ -1,0 +1,24 @@
+.top-bar {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar img {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+}
+
+.top-bar .left img {
+    width: 38px;
+    height: 38px;
+}
+
+.top-bar .right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
