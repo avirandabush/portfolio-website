@@ -3,22 +3,21 @@ body {
 }
 
 .app {
-    width: 100vw;
-    height: 100vh;
+    width: calc(100vw - 2px);
+    height: calc(100vh - 2px);
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: black;
+    border: 1px solid #3d3a36;
 }
 
 .container {
-    position: relative;
     width: calc(100% - 80px);
     height: calc(100% - 80px);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
     border-radius: 8px;
     box-sizing: border-box;
@@ -27,4 +26,11 @@ body {
     border: 2px solid #3d3a36;
     color: white;
     background: linear-gradient(145deg, #56514D, #554f56);
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
