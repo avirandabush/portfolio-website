@@ -1,0 +1,22 @@
+.dock {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 16px;
+}
+
+.dock-inner {
+    display: flex;
+    gap: 32px;
+    padding: 12px 32px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 28px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dock-devider {
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 2px;
+}

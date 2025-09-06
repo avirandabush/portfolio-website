@@ -1,0 +1,36 @@
+.dock-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dock-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    background: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.dock-button:hover {
+    transform: scale(1.1);
+}
+
+.dock-button img {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+}
+
+.dock-indicator {
+    margin-top: 5px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: white;
+}
