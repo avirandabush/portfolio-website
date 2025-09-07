@@ -14,9 +14,9 @@ const AboutScreen = () => {
                 </div>
                 <div className="terminal-content">
                     <p>Hi, my name is Aviran Dabush.</p>
-                    <p>I'm an iOS developer with 3 years of experience in mobile development.</p>
+                    <p>iOS developer with three years of experience in mobile app development.</p>
                     <p>I also practice Android and web development in my free time.</p>
-                    <p>I'm passionate about learning new technologies, improving my skills, and growing professionally.</p>
+                    <p>Passionate about learning new technologies, improving my skills, and growing professionally.</p>
                 </div>
             </div>
         </div>
