@@ -2,8 +2,9 @@ import "./Home.css"
 
 const HomeScreen = () => {
     return (
-        <div className="dock-button-wrapper">
-            <h1>Welcome to My Portfolio</h1>
+        <div className="home-container">
+            <h1>Aviran Dabush</h1>
+            <h2>Front-End Developer</h2>
         </div>
     )
 }
