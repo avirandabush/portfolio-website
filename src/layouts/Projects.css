@@ -43,3 +43,18 @@
 #backArrow {
   transform: rotate(180deg);
 }
+
+.projects-loader {
+  font-size: 34px;
+  color: white;
+}
+
+.projects-error {
+  font-size: 34px;
+  color: red;
+}
+
+.projects-empty {
+  font-size: 34px;
+  color: gray
+}
