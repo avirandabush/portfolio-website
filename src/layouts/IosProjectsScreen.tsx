@@ -3,8 +3,8 @@ import MobileProjectCell from "../components/ProjectCell/MobileProjectCell"
 
 const IosProjectsScreen = () => (
     <ProjectsView
-        projectType="iOS"
-        title="iOS Projects"
+        projectType="ios"
+        title="iOS"
         CellComponent={MobileProjectCell}
     />
 )

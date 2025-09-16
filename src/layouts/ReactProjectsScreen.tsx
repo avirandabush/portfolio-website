@@ -1,11 +1,12 @@
-import "./Projects.css"
+import ProjectsView from "../components/ProjectsView"
+import MobileProjectCell from "../components/ProjectCell/MobileProjectCell"
 
-const ReactProjectsScreen = () => {
-    return (
-        <div className="dock-button-wrapper">
-            <h1>React Projects</h1>
-        </div>
-    )
-}
+const ReactProjectsScreen = () => (
+    <ProjectsView
+        projectType="react"
+        title="React"
+        CellComponent={MobileProjectCell}
+    />
+)
 
 export default ReactProjectsScreen

@@ -48,11 +48,11 @@ const ProjectsView = ({ projectType, title, CellComponent }: ProjectsViewProps) 
             </div>
             <div className="projects-right">
                 {loading ? (
-                    <div className="projects-loader">Loading {title}...</div>
+                    <div className="projects-loader">Loading {title} Projects...</div>
                 ) : error ? (
                     <div className="projects-error">{error}</div>
                 ) : projects.length === 0 ? (
-                    <div className="projects-empty">No {title} found</div>
+                    <div className="projects-empty">No {title} projects found</div>
                 ) : (
                     <>
                         <button className="nav-button" onClick={goPrev}>
