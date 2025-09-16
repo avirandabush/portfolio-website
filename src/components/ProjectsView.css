@@ -1,0 +1,60 @@
+.projects-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.projects-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+}
+
+.projects-left h2 {
+    margin: 0;
+    font-size: 34px;
+    color: #fff;
+}
+
+.projects-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.nav-button:hover {
+    transform: scale(1.2);
+}
+
+#backArrow {
+    transform: rotate(180deg);
+}
+
+.projects-loader {
+    font-size: 34px;
+    color: white;
+}
+
+.projects-error {
+    font-size: 34px;
+    color: red;
+}
+
+.projects-empty {
+    font-size: 34px;
+    color: gray
+}
