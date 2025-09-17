@@ -10,12 +10,12 @@
 .terminal-window {
     width: 80%;
     max-width: 800px;
-    background-color: #1e1e1e;
+    background-color: var(--tertiary);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 10px 30px var(--shadow);
     font-family: "Courier New", Courier, monospace;
-    color: #10d261;
+    color: var(--success);
 }
 
 .terminal-header {
@@ -38,19 +38,19 @@
 }
 
 .terminal-button.close {
-    background-color: #ff5f56;
+    background-color: var(--error);
 }
 
 .terminal-button.minimize {
-    background-color: #ffbd2e;
+    background-color: var(--warning);
 }
 
 .terminal-button.maximize {
-    background-color: #27c93f;
+    background-color: var(--success);
 }
 
 .terminal-title {
-    color: #aaa;
+    color: var(--secondary);
     font-size: 18px;
     text-align: center;
     flex-grow: 1;

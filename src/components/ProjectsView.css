@@ -18,7 +18,7 @@
 .projects-left h2 {
     margin: 0;
     font-size: 34px;
-    color: #fff;
+    color: var(--light);
 }
 
 .projects-right {
@@ -30,7 +30,6 @@
 .nav-button {
     background: transparent;
     border: none;
-    color: white;
     font-size: 2rem;
     cursor: pointer;
     transition: transform 0.2s;
@@ -46,15 +45,15 @@
 
 .projects-loader {
     font-size: 34px;
-    color: white;
+    color: var(--light);
 }
 
 .projects-error {
     font-size: 34px;
-    color: red;
+    color: var(--error);
 }
 
 .projects-empty {
     font-size: 34px;
-    color: gray
+    color: var(--warning);
 }

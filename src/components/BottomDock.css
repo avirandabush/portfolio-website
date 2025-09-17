@@ -2,21 +2,22 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    padding-bottom: 16px;
+    padding-bottom: 14px;
 }
 
 .dock-inner {
     display: flex;
     gap: 32px;
-    padding: 12px 32px;
-    background-color: rgba(255, 255, 255, 0.1);
+    padding: 12px 28px;
+    background-color: var(--primary);
     border-radius: 28px;
+    border: 1px solid var(--middle);
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 20px var(--shadow);
 }
 
 .dock-devider {
     width: 2px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 2px;
+    background-color: var(--middle);
+    border-radius: 1px;
 }
