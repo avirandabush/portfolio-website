@@ -19,7 +19,7 @@ const BottomDock = ({ activeScreen, onNavigate }: BottomDockProps) => {
 
     const handleDownloadCv = () => {
         const link = document.createElement("a")
-        link.href = "/assets/cv.pdf"
+        link.href = "cv.pdf"
         link.download = "Aviran_Dabush_iOS_Developer_CV.pdf"
         document.body.appendChild(link)
         link.click()
