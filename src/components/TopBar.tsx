@@ -1,35 +1,45 @@
 import "./TopBar.css"
+import { useState } from "react"
 import { Screen } from "../types/Screen"
 import homeIcon from "../assets/ad-plank.svg"
 import phoneIcon from "../assets/phone.svg"
 import whatsappIcon from "../assets/whatsapp.svg"
 import mailIcon from "../assets/mail-plus.svg"
+import AlertPopup from "./AlertPopup"
 
 interface TopBarProps {
     onNavigate: (screen: Screen) => void
 }
 
 export default function TopBar({ onNavigate }: TopBarProps) {
+    const [showPhonePopup, setShowPhonePopup] = useState(false)
 
-    const phoneNumber = "+972547329884".replace(/\D/g, "")
+    const phoneNumber = "0547329884".replace(/\D/g, "")
     const emailAddress = "avirandabush@gmail.com"
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
 
     const handleMailClick = () => {
-        window.location.href = `mailto:${emailAddress}`
+        if (isMobile) {
+            window.location.href = `mailto:${emailAddress}`
+        } else {
+            window.open(`mailto:${emailAddress}`, "_")
+        }
     }
 
     const handleWhatsAppClick = () => {
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
         if (isMobile) {
             window.location.href = `whatsapp://send?phone=${phoneNumber}`
         } else {
-            window.open(`https://wa.me/${phoneNumber}`, "_blank")
+            window.open(`https://web.whatsapp.com/send?phone=${phoneNumber}`, "_blank")
         }
-        window.open(`https://wa.me/${phoneNumber}`, "_blank")
     }
 
     const handlePhoneClick = () => {
-        alert(`Phone: ${phoneNumber}`)
+        if (isMobile) {
+            window.location.href = `tel:${phoneNumber}`
+        } else {
+            setShowPhonePopup(true)
+        }
     }
 
     return (
@@ -37,11 +47,15 @@ export default function TopBar({ onNavigate }: TopBarProps) {
             <div className="left">
                 <img src={homeIcon} alt="Home" onClick={() => onNavigate(Screen.Home)} />
             </div>
-            <div className="right">
+            <div className="right wave-icons">
                 <img src={mailIcon} alt="Email" onClick={handleMailClick} />
                 <img src={whatsappIcon} alt="WhatsApp" onClick={handleWhatsAppClick} />
                 <img src={phoneIcon} alt="Phone" onClick={handlePhoneClick} />
             </div>
+
+            {showPhonePopup && (
+                <AlertPopup title="Call" body={phoneNumber} onClose={() => setShowPhonePopup(false)} />
+            )}
         </div>
     )
 }
