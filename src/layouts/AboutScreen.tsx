@@ -1,14 +1,31 @@
+import { useEffect, useState } from "react"
+import { Screen } from "../types/Screen"
 import "./About.css"
 
-const AboutScreen = () => {
+type AboutScreenProps = {
+    onClose: () => void
+}
+
+const AboutScreen = ({ onClose }: AboutScreenProps) => {
+
+    const [windowState, setWindowState] = useState<"normal" | "minimized" | "maximized" | "closed">("normal")
+
+    useEffect(() => {
+        setWindowState("normal")
+    }, [])
+
+    if (windowState === "closed") {
+        return null
+    }
+    
     return (
-        <div className="about-container">
-            <div className="terminal-window">
+        <div className={`about-container ${windowState}`}>
+            <div className={`terminal-window ${windowState}`}>
                 <div className="terminal-header">
                     <div className="terminal-buttons">
-                        <div className="terminal-button close"></div>
-                        <div className="terminal-button minimize"></div>
-                        <div className="terminal-button maximize"></div>
+                        <div className="terminal-button close" onClick={() => onClose()}></div>
+                        <div className="terminal-button minimize" onClick={() => setWindowState("minimized")}></div>
+                        <div className="terminal-button maximize" onClick={() => setWindowState(windowState === "maximized" ? "normal" : "maximized")}></div>
                     </div>
                     <div className="terminal-title">About Me</div>
                 </div>

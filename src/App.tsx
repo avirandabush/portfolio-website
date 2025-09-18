@@ -23,7 +23,7 @@ function App() {
 
         <div className="content">
           {activeScreen === Screen.Home && <HomeScreen />}
-          {activeScreen === Screen.About && <AboutScreen />}
+          {activeScreen === Screen.About && <AboutScreen onClose={() => setActiveScreen(Screen.Home)} />}
           {activeScreen === Screen.iOS && <IosProjectsScreen />}
           {activeScreen === Screen.Android && <AndroidProjectsScreen />}
           {activeScreen === Screen.React && <ReactProjectsScreen />}
