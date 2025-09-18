@@ -8,6 +8,7 @@ import AboutScreen from "./layouts/AboutScreen"
 import IosProjectsScreen from "./layouts/IosProjectsScreen"
 import AndroidProjectsScreen from "./layouts/AndroidProjectsScreen"
 import ReactProjectsScreen from "./layouts/ReactProjectsScreen"
+import OtherProjectsScreen from "./layouts/OtherProjectsScreen"
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
           {activeScreen === Screen.iOS && <IosProjectsScreen />}
           {activeScreen === Screen.Android && <AndroidProjectsScreen />}
           {activeScreen === Screen.React && <ReactProjectsScreen />}
+          {activeScreen === Screen.Other && <OtherProjectsScreen />}
         </div>
 
         <BottomDock activeScreen={activeScreen} onNavigate={setActiveScreen} />

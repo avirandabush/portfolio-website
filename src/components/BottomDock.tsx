@@ -5,6 +5,7 @@ import DockButton from "./DockButton"
 import appleIcon from "../assets/apple.svg"
 import androidIcon from "../assets/android.svg"
 import reactIcon from "../assets/react.svg"
+import otherIcon from "../assets/brackets-code.svg"
 import cvIcon from "../assets/file-cv.svg"
 import infoIcon from "../assets/info.svg"
 import Toast from "./Toast"
@@ -35,6 +36,7 @@ const BottomDock = ({ activeScreen, onNavigate }: BottomDockProps) => {
                     <DockButton icon={appleIcon} alt={"iOS Projects"} isActive={activeScreen === Screen.iOS} onClick={() => onNavigate(Screen.iOS)} />
                     <DockButton icon={androidIcon} alt={"Android Projects"} isActive={activeScreen === Screen.Android} onClick={() => onNavigate(Screen.Android)} />
                     <DockButton icon={reactIcon} alt={"React Projects"} isActive={activeScreen === Screen.React} onClick={() => onNavigate(Screen.React)} />
+                    <DockButton icon={otherIcon} alt={"Other Projects"} isActive={activeScreen === Screen.Other} onClick={() => onNavigate(Screen.Other)} />
 
                     <div className="dock-devider" />
 
