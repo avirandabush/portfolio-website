@@ -1,0 +1,43 @@
+.alert-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.alert-popup-card {
+  background: var(--primary);
+  padding: 30px 50px;
+  border-radius: 12px;
+  border: 1px solid var(--secondary);
+  box-shadow: 0 4px 12px var(--light-shadow);
+  text-align: center;
+  min-width: 240px;
+  color: var(--light);
+}
+
+.alert-popup-card h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.alert-popup-card p {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.alert-popup-card button {
+  margin-top: 15px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: var(--secondary);
+  color: var(--primary);
+  cursor: pointer;
+}
