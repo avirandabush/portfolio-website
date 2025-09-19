@@ -91,7 +91,7 @@
     transform: translate(-50%, -50%);
     background-color: var(--tertiary);
     color: var(--success);
-    padding: 12px 18px;
+    padding: 4px 22px;
     border-radius: 12px;
     box-shadow: 0 4px 12px var(--shadow);
     cursor: pointer;
