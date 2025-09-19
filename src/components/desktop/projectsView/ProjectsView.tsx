@@ -1,7 +1,7 @@
 import { useState, useEffect, type ComponentType } from "react"
-import { fetchProjects } from "../utils/ProjectsServise"
-import type { Project } from "../types/Project"
-import next from "../assets/next-arrow.svg"
+import { fetchProjects } from "../../../utils/ProjectsServise"
+import type { Project } from "../../../types/Project"
+import next from "../../../assets/next-arrow.svg"
 import "./ProjectsView.css"
 
 interface ProjectsViewProps {

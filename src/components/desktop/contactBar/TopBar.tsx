@@ -1,11 +1,11 @@
 import "./TopBar.css"
 import { useState } from "react"
-import { Screen } from "../types/Screen"
-import homeIcon from "../assets/ad-plank.svg"
-import phoneIcon from "../assets/phone.svg"
-import whatsappIcon from "../assets/whatsapp.svg"
-import mailIcon from "../assets/mail-plus.svg"
-import AlertPopup from "./AlertPopup"
+import { Screen } from "../../../types/Screen"
+import homeIcon from "../../../assets/ad-plank.svg"
+import phoneIcon from "../../../assets/phone.svg"
+import whatsappIcon from "../../../assets/whatsapp.svg"
+import mailIcon from "../../../assets/mail-plus.svg"
+import AlertPopup from "../alertPopup/AlertPopup"
 
 interface TopBarProps {
     onNavigate: (screen: Screen) => void

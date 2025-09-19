@@ -1,14 +1,14 @@
 import "./BottomDock.css"
 import { useState } from "react"
-import { Screen } from "../types/Screen"
-import DockButton from "./DockButton"
-import appleIcon from "../assets/apple.svg"
-import androidIcon from "../assets/android.svg"
-import reactIcon from "../assets/react.svg"
-import otherIcon from "../assets/brackets-code.svg"
-import cvIcon from "../assets/file-cv.svg"
-import infoIcon from "../assets/info.svg"
-import Toast from "./Toast"
+import { Screen } from "../../../types/Screen"
+import DockButton from "../dockButton/DockButton"
+import appleIcon from "../../../assets/apple.svg"
+import androidIcon from "../../../assets/android.svg"
+import reactIcon from "../../../assets/react.svg"
+import otherIcon from "../../../assets/brackets-code.svg"
+import cvIcon from "../../../assets/file-cv.svg"
+import infoIcon from "../../../assets/info.svg"
+import Toast from "../toast/Toast"
 
 type BottomDockProps = {
     activeScreen: Screen;

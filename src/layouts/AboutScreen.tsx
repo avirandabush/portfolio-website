@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useDevice } from "../context/DeviceContext"
 import "./About.css"
 
 type AboutScreenProps = {
@@ -7,6 +8,7 @@ type AboutScreenProps = {
 
 const AboutScreen = ({ onClose }: AboutScreenProps) => {
 
+    const { isMobile } = useDevice();
     const [windowState, setWindowState] = useState<"normal" | "minimized" | "maximized">("normal")
     const [isCountdownVisible, setIsCountdownVisible] = useState(false)
     const [countdown, setCountdown] = useState(3)

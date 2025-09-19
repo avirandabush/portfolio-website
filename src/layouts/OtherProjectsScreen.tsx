@@ -1,5 +1,5 @@
-import ProjectsView from "../components/ProjectsView"
-import MobileProjectCell from "../components/ProjectCell/MobileProjectCell"
+import ProjectsView from "../components/desktop/projectsView/ProjectsView"
+import MobileProjectCell from "../components/desktop/projectCell/MobileProjectCell"
 
 const OtherProjectsScreen = () => (
     <ProjectsView
