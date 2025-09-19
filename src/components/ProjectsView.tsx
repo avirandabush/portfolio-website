@@ -55,15 +55,19 @@ const ProjectsView = ({ projectType, title, CellComponent }: ProjectsViewProps) 
                     <div className="projects-empty">No {title} projects found</div>
                 ) : (
                     <>
-                        <button className="nav-button" onClick={goPrev}>
-                            <img src={next} alt="Prev" id="backArrow" />
-                        </button>
+                        {projects.length > 1 && (
+                            <button className="nav-button" onClick={goPrev}>
+                                <img src={next} alt="Prev" id="backArrow" />
+                            </button>
+                        )}
 
                         <CellComponent project={project} />
 
-                        <button className="nav-button" onClick={goNext}>
-                            <img src={next} alt="Next" />
-                        </button>
+                        {projects.length > 1 && (
+                            <button className="nav-button" onClick={goNext}>
+                                <img src={next} alt="Next" />
+                            </button>
+                        )}
                     </>
                 )}
             </div>
