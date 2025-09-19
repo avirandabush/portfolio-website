@@ -4,6 +4,8 @@ import { Screen } from "./types/Screen"
 import { useDevice } from "./context/DeviceContext"
 import TopContactBar from "./components/desktop/contactBar/TopContactBar"
 import AppsDock from "./components/desktop/appsDock/AppsDock"
+import ContactDock from "./components/mobile/contactDock/ContactDock"
+import TopMobileBar from "./components/mobile/TopMobileBar/TopMobileBar"
 import HomeScreen from "./layouts/HomeScreen"
 import AboutScreen from "./layouts/AboutScreen"
 import IosProjectsScreen from "./layouts/IosProjectsScreen"
@@ -16,15 +18,18 @@ function App() {
   const [activeScreen, setActiveScreen] = useState<Screen>(Screen.Home);
   const { isMobile } = useDevice();
 
-  const TopBar = isMobile ? TopContactBar : TopContactBar;
-  const BottomBar = isMobile ? AppsDock : AppsDock;
+  const TopBar = isMobile 
+  ? <TopMobileBar onNavigate={setActiveScreen} />
+  : <TopContactBar onNavigate={setActiveScreen} />;
+
+  const BottomBar = isMobile
+    ? <ContactDock />
+    : <AppsDock activeScreen={activeScreen} onNavigate={setActiveScreen} />;
 
   return (
     <div className="app">
       <div className="container">
-        <TopBar
-          onNavigate={setActiveScreen}
-        />
+        {TopBar}
 
         <div className="content">
           {activeScreen === Screen.Home && <HomeScreen />}
@@ -35,10 +40,7 @@ function App() {
           {activeScreen === Screen.Other && <OtherProjectsScreen />}
         </div>
 
-        <BottomBar
-          activeScreen={activeScreen}
-          onNavigate={setActiveScreen}
-        />
+        {BottomBar}
       </div>
     </div>
   )

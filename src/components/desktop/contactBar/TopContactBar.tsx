@@ -14,32 +14,19 @@ interface TopContactBarProps {
 export default function TopContactBar({ onNavigate }: TopContactBarProps) {
     const [showPhonePopup, setShowPhonePopup] = useState(false)
 
-    const phoneNumber = "0547329884".replace(/\D/g, "")
+    const phoneNumber = "+972-54-7329884"
     const emailAddress = "avirandabush@gmail.com"
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
 
     const handleMailClick = () => {
-        if (isMobile) {
-            window.location.href = `mailto:${emailAddress}`
-        } else {
-            window.open(`mailto:${emailAddress}`, "_")
-        }
+        window.open(`mailto:${emailAddress}`, "_")
     }
 
     const handleWhatsAppClick = () => {
-        if (isMobile) {
-            window.location.href = `whatsapp://send?phone=${phoneNumber}`
-        } else {
-            window.open(`https://web.whatsapp.com/send?phone=${phoneNumber}`, "_blank")
-        }
+        window.open(`https://web.whatsapp.com/send?phone=${phoneNumber.replace(/\D/g, "")}`, "_blank")
     }
 
     const handlePhoneClick = () => {
-        if (isMobile) {
-            window.location.href = `tel:${phoneNumber}`
-        } else {
-            setShowPhonePopup(true)
-        }
+        setShowPhonePopup(true)
     }
 
     return (

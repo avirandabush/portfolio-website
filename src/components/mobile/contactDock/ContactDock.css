@@ -1,0 +1,9 @@
+.contact-dock {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  gap: 16px;
+  padding: 12px;
+  backdrop-filter: blur(8px);
+  border-top: 1px solid var(--secondary);
+}
