@@ -3,7 +3,7 @@ import "./DockButton.css"
 type DockButtonProps = {
     icon: string
     alt: string
-    isActive: boolean
+    isActive?: boolean
     onClick?: () => void
 }
 
