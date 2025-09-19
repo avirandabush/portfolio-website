@@ -27,8 +27,8 @@ function App() {
     : <AppsDock activeScreen={activeScreen} onNavigate={setActiveScreen} />;
 
   return (
-    <div className="app">
-      <div className="container">
+    <div className={`app ${isMobile ? 'mobile' : 'desktop'}`}>
+      <div className={`container ${isMobile ? 'mobile' : 'desktop'}`}>
         {TopBar}
 
         <div className="content">
