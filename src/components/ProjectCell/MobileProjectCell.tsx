@@ -14,7 +14,8 @@ const MobileProjectCell = ({ project }: Props) => {
 
             <div className="project-details">
                 <h3>{project.name}</h3>
-                <p>{project.description}</p>
+                <p className="date">{project.createdAt.toLocaleDateString()}</p>
+                <p className="description">{project.description}</p>
 
                 <div className="tags">
                     {project.tags.map(tag => (
