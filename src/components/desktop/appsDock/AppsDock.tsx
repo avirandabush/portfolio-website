@@ -1,4 +1,4 @@
-import "./BottomDock.css"
+import "./AppsDock.css"
 import { useState } from "react"
 import { Screen } from "../../../types/Screen"
 import DockButton from "../dockButton/DockButton"
@@ -10,12 +10,12 @@ import cvIcon from "../../../assets/file-cv.svg"
 import infoIcon from "../../../assets/info.svg"
 import Toast from "../toast/Toast"
 
-type BottomDockProps = {
+type AppsDockProps = {
     activeScreen: Screen;
     onNavigate: (screen: Screen) => void
 }
 
-const BottomDock = ({ activeScreen, onNavigate }: BottomDockProps) => {
+const AppsDock = ({ activeScreen, onNavigate }: AppsDockProps) => {
     const [toastMessage, setToastMessage] = useState<string | null>(null)
 
     const handleDownloadCv = () => {
@@ -52,4 +52,4 @@ const BottomDock = ({ activeScreen, onNavigate }: BottomDockProps) => {
     )
 }
 
-export default BottomDock
+export default AppsDock

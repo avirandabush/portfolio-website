@@ -1,4 +1,4 @@
-import "./TopBar.css"
+import "./TopContactBar.css"
 import { useState } from "react"
 import { Screen } from "../../../types/Screen"
 import homeIcon from "../../../assets/ad-plank.svg"
@@ -7,11 +7,11 @@ import whatsappIcon from "../../../assets/whatsapp.svg"
 import mailIcon from "../../../assets/mail-plus.svg"
 import AlertPopup from "../alertPopup/AlertPopup"
 
-interface TopBarProps {
+interface TopContactBarProps {
     onNavigate: (screen: Screen) => void
 }
 
-export default function TopBar({ onNavigate }: TopBarProps) {
+export default function TopContactBar({ onNavigate }: TopContactBarProps) {
     const [showPhonePopup, setShowPhonePopup] = useState(false)
 
     const phoneNumber = "0547329884".replace(/\D/g, "")

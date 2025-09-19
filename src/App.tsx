@@ -1,8 +1,9 @@
 import "./App.css"
 import { useState } from "react"
 import { Screen } from "./types/Screen"
-import TopBar from "./components/desktop/contactBar/TopBar"
-import BottomDock from "./components/desktop/dock/BottomDock"
+import { useDevice } from "./context/DeviceContext"
+import TopContactBar from "./components/desktop/contactBar/TopContactBar"
+import AppsDock from "./components/desktop/appsDock/AppsDock"
 import HomeScreen from "./layouts/HomeScreen"
 import AboutScreen from "./layouts/AboutScreen"
 import IosProjectsScreen from "./layouts/IosProjectsScreen"
@@ -12,7 +13,11 @@ import OtherProjectsScreen from "./layouts/OtherProjectsScreen"
 
 function App() {
 
-  const [activeScreen, setActiveScreen] = useState<Screen>(Screen.Home)
+  const [activeScreen, setActiveScreen] = useState<Screen>(Screen.Home);
+  const { isMobile } = useDevice();
+
+  const TopBar = isMobile ? TopContactBar : TopContactBar;
+  const BottomBar = isMobile ? AppsDock : AppsDock;
 
   return (
     <div className="app">
@@ -30,7 +35,10 @@ function App() {
           {activeScreen === Screen.Other && <OtherProjectsScreen />}
         </div>
 
-        <BottomDock activeScreen={activeScreen} onNavigate={setActiveScreen} />
+        <BottomBar
+          activeScreen={activeScreen}
+          onNavigate={setActiveScreen}
+        />
       </div>
     </div>
   )
