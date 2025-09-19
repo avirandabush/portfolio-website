@@ -1,4 +1,12 @@
 import type { Project } from "../../types/Project"
+import LinkAndIconButton from "../LinkAndIconButton"
+import gitIcon from "../../assets/git-branch.svg"
+import gitIconLight from "../../assets/git-branch-light.svg"
+import appStoreIcon from "../../assets/app-store.svg"
+import googlePlayIcon from "../../assets/google-play.svg"
+import googlePlayLightIcon from "../../assets/google-play-light.svg"
+import visitWebsiteIcon from "../../assets/website-click.svg"
+import visitWebsiteLightIcon from "../../assets/website-click-light.svg"
 import "./MobileProjectCell.css"
 
 type Props = {
@@ -24,12 +32,21 @@ const MobileProjectCell = ({ project }: Props) => {
                 </div>
 
                 <div className="actions">
-                    <a href={project.codeUrl} target="_blank" rel="noopener noreferrer">
-                        <button>View Code</button>
-                    </a>
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                        <button>View Project</button>
-                    </a>
+                    <LinkAndIconButton
+                        text={"View Code"}
+                        link={project.codeUrl}
+                        icon={gitIcon}
+                        hoverIcon={gitIconLight}
+                    />
+
+                    {project.liveUrl && (
+                        <LinkAndIconButton
+                            text={"View Project"}
+                            link={project.liveUrl}
+                            icon={project.type === "android" ? googlePlayIcon : project.type === "ios" ? appStoreIcon : visitWebsiteIcon}
+                            hoverIcon={project.type === "android" ? googlePlayLightIcon : project.type === "ios" ? appStoreIcon : visitWebsiteLightIcon}
+                        />
+                    )}
                 </div>
             </div>
         </div>

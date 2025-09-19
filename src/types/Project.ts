@@ -6,7 +6,7 @@ export interface Project {
     description: string
     videoUrl: string
     codeUrl: string
-    liveUrl: string
+    liveUrl?: string
     createdAt: Date
     tags: string[]
     type: systemType
