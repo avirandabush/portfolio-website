@@ -54,7 +54,13 @@
 }
 
 .date {
+    display: inline-block;
+    width: fit-content;
     font-size: 14px;
+    padding: 5px 12px;
+    border-radius: 8px;
+    background-color: var(--dark);
+    color: var(--light);
 }
 
 .tags {
