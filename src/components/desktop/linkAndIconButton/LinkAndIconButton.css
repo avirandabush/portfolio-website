@@ -22,9 +22,20 @@
     transform: translateY(0);
 }
 
+.link-icon-button.mobile {
+    padding: 4px 12px;
+    font-size: 12px;
+    gap: 4px;
+}
+
 .button-icon {
     width: 20px;
     height: 20px;
+}
+
+.button-icon.mobile {
+    width: 14px;
+    height: 14px;
 }
 
 .button-text {
