@@ -1,0 +1,9 @@
+.mobile-apps-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    justify-items: center;
+    align-items: center;
+    padding: 8px;
+    margin-top: 32px;
+}
