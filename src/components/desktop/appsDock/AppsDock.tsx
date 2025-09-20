@@ -1,6 +1,7 @@
 import "./AppsDock.css"
 import { useState } from "react"
 import { Screen } from "../../../types/Screen"
+import { downloadCv } from "../../../utils/files"
 import DockButton from "../dockButton/DockButton"
 import appleIcon from "../../../assets/apple.svg"
 import androidIcon from "../../../assets/android.svg"
@@ -19,14 +20,10 @@ const AppsDock = ({ activeScreen, onNavigate }: AppsDockProps) => {
     const [toastMessage, setToastMessage] = useState<string | null>(null)
 
     const handleDownloadCv = () => {
-        const link = document.createElement("a")
-        link.href = "cv.pdf"
-        link.download = "Aviran_Dabush_iOS_Developer_CV.pdf"
-        document.body.appendChild(link)
-        link.click()
-        document.body.removeChild(link)
-
-        setToastMessage("📄 CV file was downloaded successfully!")
+        const success = downloadCv()
+        if (success) {
+            setToastMessage("📄 CV file was downloaded successfully!")
+        }
     }
 
     return (
