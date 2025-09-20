@@ -68,7 +68,7 @@ body {
 
 .app.mobile {
   width: calc(100vw);
-  height: calc(100vh);
+  height: calc(100dvh);
   border: none;
 }
 
