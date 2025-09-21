@@ -97,3 +97,24 @@
     cursor: pointer;
     font-size: 18px;
 }
+
+.about-container.mobile {
+    margin-left: 0;
+}
+
+.about-mobile-window {
+  width: 100%;
+  background-color: var(--primary);
+  border: 1px solid var(--secondary);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 8px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  color: var(--light);
+}
+
+.about-mobile-content {
+  font-size: 1rem;
+  line-height: 1.4;
+}

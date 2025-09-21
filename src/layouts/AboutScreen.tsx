@@ -7,7 +7,6 @@ type AboutScreenProps = {
 }
 
 const AboutScreen = ({ onClose }: AboutScreenProps) => {
-
     const { isMobile } = useDevice();
     const [windowState, setWindowState] = useState<"normal" | "minimized" | "maximized">("normal")
     const [isCountdownVisible, setIsCountdownVisible] = useState(false)
@@ -38,28 +37,61 @@ const AboutScreen = ({ onClose }: AboutScreenProps) => {
         }
     }, [windowState])
 
+    const aboutText = (
+        <>
+            <p>Hi, my name is Aviran Dabush.</p>
+            <p>iOS developer with three years of experience in mobile app development.</p>
+            <p>I also practice Android and web development in my free time.</p>
+            <p>Passionate about learning new technologies, improving my skills, and growing professionally.</p>
+        </>
+    )
+
     return (
-        <div className={`about-container ${windowState}`}>
-            <div className={`terminal-window ${windowState}`}>
-                <div className="terminal-header">
-                    <div className="terminal-buttons">
-                        <div className="terminal-button close" onClick={() => onClose()}></div>
-                        <div className="terminal-button minimize" onClick={() => setWindowState("minimized") }></div>
-                        <div className="terminal-button maximize" onClick={() => setWindowState(windowState === "maximized" ? "normal" : "maximized")}></div>
+        <div className={`about-container ${windowState} ${isMobile ? "mobile" : "desktop"}`}>
+            {isMobile ? (
+                <div className="about-mobile-window">
+                    <div className="about-mobile-content">{aboutText}</div>
+                </div>
+            ) : (
+                <>
+                    <div className={`terminal-window ${windowState}`}>
+                        <div className="terminal-header">
+                            <div className="terminal-buttons">
+                                <div
+                                    className="terminal-button close"
+                                    onClick={() => onClose()}
+                                ></div>
+                                <div
+                                    className="terminal-button minimize"
+                                    onClick={() => setWindowState("minimized")}
+                                ></div>
+                                <div
+                                    className="terminal-button maximize"
+                                    onClick={() =>
+                                        setWindowState(
+                                            windowState === "maximized" ? "normal" : "maximized"
+                                        )
+                                    }
+                                ></div>
+                            </div>
+                            <div className="terminal-title">About Me</div>
+                        </div>
+                        <div className="terminal-content">{aboutText}</div>
                     </div>
-                    <div className="terminal-title">About Me</div>
-                </div>
-                <div className="terminal-content">
-                    <p>Hi, my name is Aviran Dabush.</p>
-                    <p>iOS developer with three years of experience in mobile app development.</p>
-                    <p>I also practice Android and web development in my free time.</p>
-                    <p>Passionate about learning new technologies, improving my skills, and growing professionally.</p>
-                </div>
-            </div>
-            {isCountdownVisible && windowState === "minimized" && (
-                <div className="minimized-bar" onClick={() => { setIsCountdownVisible(true); setWindowState("normal"); }}>
-                    <p>Be back in <span>{countdown}...</span></p>
-                </div>
+                    {isCountdownVisible && windowState === "minimized" && (
+                        <div
+                            className="minimized-bar"
+                            onClick={() => {
+                                setIsCountdownVisible(true)
+                                setWindowState("normal")
+                            }}
+                        >
+                            <p>
+                                Be back in <span>{countdown}...</span>
+                            </p>
+                        </div>
+                    )}
+                </>
             )}
         </div>
     )
