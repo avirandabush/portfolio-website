@@ -10,24 +10,31 @@ import otherIcon from "../../../assets/brackets-code.svg"
 import cvIcon from "../../../assets/file-cv.svg"
 import infoIcon from "../../../assets/info.svg"
 import MobileProjectCell from "../../desktop/projectCell/MobileProjectCell"
+import AboutScreen from "../../../layouts/AboutScreen"
+import AboutModal from "../AboutModal/AboutModal"
+
+type ModalType = "projects" | "about"
 
 interface ModalState {
+    type: ModalType
     title: string
-    type: string
+    projectType?: string
 }
 
 export default function MobileApps() {
     const [modalState, setModalState] = useState<ModalState | null>(null)
 
-    const openModal = (title: string, type: string) => {
-        setModalState({ title, type })
+    const openProjectsModal = (title: string, projectType: string) => {
+        setModalState({ type: "projects", title, projectType })
+    }
+
+    const openAboutModal = (title: string) => {
+        setModalState({ type: "about", title })
     }
 
     const closeModal = () => setModalState(null)
 
-    const handleDownloadCv = () => {
-        downloadCv()
-    }
+    const handleDownloadCv = () => downloadCv()
 
     return (
         <>
@@ -35,40 +42,44 @@ export default function MobileApps() {
                 <DockButton
                     icon={appleIcon}
                     alt="iOS Projects"
-                    onClick={() => openModal("iOS Projects", "ios")}
+                    onClick={() => openProjectsModal("iOS Projects", "ios")}
                 />
                 <DockButton
                     icon={androidIcon}
                     alt="Android Projects"
-                    onClick={() => openModal("Android Projects", "android")}
+                    onClick={() => openProjectsModal("Android Projects", "android")}
                 />
                 <DockButton
                     icon={reactIcon}
                     alt="React Projects"
-                    onClick={() => openModal("React Projects", "react")}
+                    onClick={() => openProjectsModal("React Projects", "react")}
                 />
                 <DockButton
                     icon={otherIcon}
                     alt="Other Projects"
-                    onClick={() => openModal("Other Projects", "other")}
+                    onClick={() => openProjectsModal("Other Projects", "other")}
                 />
-                <DockButton
-                    icon={cvIcon}
-                    alt="CV"
-                    onClick={() => handleDownloadCv()}
-                />
+                <DockButton icon={cvIcon} alt="CV" onClick={handleDownloadCv} />
                 <DockButton
                     icon={infoIcon}
                     alt="About"
-                    onClick={() => console.log("open about page")}
+                    onClick={() => openAboutModal("About Me")}
                 />
             </div>
 
-            {modalState && (
+            {modalState?.type === "projects" && (
                 <ProjectsModal
-                    projectType={modalState.type}
+                    projectType={modalState.projectType!}
                     title={modalState.title}
                     CellComponent={MobileProjectCell}
+                    onClose={closeModal}
+                />
+            )}
+
+            {modalState?.type === "about" && (
+                <AboutModal
+                    title={modalState.title}
+                    CellComponent={AboutScreen}
                     onClose={closeModal}
                 />
             )}
