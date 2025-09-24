@@ -51,7 +51,12 @@
   padding: 16px;
 }
 
-/* אנימציות */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 @keyframes slideUp {
   from {
     transform: translateY(100%);
