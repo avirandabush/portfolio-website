@@ -1,4 +1,3 @@
-import { useDevice } from "../../../context/DeviceContext";
 import type { Project } from "../../../types/Project"
 import LinkAndIconButton from "../../desktop/linkAndIconButton/LinkAndIconButton";
 import gitIcon from "../../../assets/git-branch.svg"
@@ -15,33 +14,32 @@ type ProjectsMobileCellProps = {
 }
 
 const ProjectsMobileCell = ({ project }: ProjectsMobileCellProps) => {
-    const { isMobile } = useDevice();
 
     return (
-        <div className="cell-container">
-            <div className="project-header">
+        <div className="mobile-cell-container">
+            <div className="mobile-project-header">
                 <h3>{project.name}</h3>
-                <p className="date-string">
+                <p className="mobile-date-string">
                     {project.createdAt.toLocaleDateString()}
                 </p>
             </div>
-            <div className="cell-body">
-                <div className={`device-frame ${project.type}`}>
+            <div className="mobile-cell-body">
+                <div className={`mobile-device-frame ${project.type}`}>
                     <video src={project.videoUrl} autoPlay loop />
                 </div>
-                <p className="project-description">
+                <p className="mobile-project-description">
                     {project.description}
                 </p>
             </div>
-            <div className="cell-footer">
-                <div className="tags">
+            <div className="mobile-cell-footer">
+                <div className="mobile-tags">
                     {project.tags.map(tag => (
-                        <span key={tag} className="tag">
+                        <span key={tag} className="mobile-tag">
                             {tag}
                         </span>
                     ))}
                 </div>
-                <div className={`actions ${isMobile ? 'mobile' : 'desktop'}`}>
+                <div className="mobile-actions">
                     <LinkAndIconButton
                         text={"View Code"}
                         link={project.codeUrl}

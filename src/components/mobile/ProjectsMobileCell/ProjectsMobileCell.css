@@ -1,4 +1,4 @@
-.cell-container {
+.mobile-cell-container {
     display: flex;
     flex-direction: column;
     border: 1px solid var(--secondary);
@@ -9,18 +9,18 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.project-header {
+.mobile-project-header {
     margin-bottom: 12px;
 }
 
-.project-header h3 {
+.mobile-project-header h3 {
     margin: 0;
     margin-bottom: 8px;
     font-size: 18px;
     font-weight: 700;
 }
 
-.date-string {
+.mobile-date-string {
     margin: 0;
     padding: 2px 12px;
     font-size: 10px;
@@ -31,12 +31,12 @@
     width: fit-content;
 }
 
-.cell-body {
+.mobile-cell-body {
     margin-bottom: 4px;
     line-height: 1.3;
 }
 
-.device-frame {
+.mobile-device-frame {
     float: left;
     width: 45%;
     margin: 0 12px 12px 0;
@@ -45,7 +45,7 @@
     aspect-ratio: 9 / 19.5;
 }
 
-.device-frame.desktop {
+.mobile-device-frame.desktop {
     float: none;
     display: block;
     width: 90%;
@@ -55,21 +55,21 @@
     aspect-ratio: 19.5 / 9;
 }
 
-.device-frame.ios {
-    border-radius: 30px;
+.mobile-device-frame.ios {
+    border-radius: 18px;
 }
 
-.device-frame.android {
+.mobile-device-frame.android {
     border-radius: 12px;
 }
 
-.device-frame video {
+.mobile-device-frame video {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.project-description {
+.mobile-project-description {
     text-align: left;
     font-size: 14px;
     color: var(--light);
@@ -78,19 +78,19 @@
     border: 2px solid var(--tertiary);
 }
 
-.cell-footer {
+.mobile-cell-footer {
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
 
-.tags {
+.mobile-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 4px;
 }
 
-.tag {
+.mobile-tag {
     background-color: var(--dark);
     color: var(--secondary);
     padding: 4px 9px;
@@ -99,8 +99,8 @@
     font-weight: 500;
 }
 
-.actions {
+.mobile-actions {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
 }
