@@ -12,6 +12,7 @@ import infoIcon from "../../../assets/info.svg"
 import MobileProjectCell from "../../desktop/projectCell/MobileProjectCell"
 import AboutScreen from "../../../layouts/AboutScreen"
 import AboutModal from "../AboutModal/AboutModal"
+import ProjectsMobileCell from "../ProjectsMobileCell/ProjectsMobileCell"
 
 type ModalType = "projects" | "about"
 
@@ -71,7 +72,7 @@ export default function MobileApps() {
                 <ProjectsModal
                     projectType={modalState.projectType!}
                     title={modalState.title}
-                    CellComponent={MobileProjectCell}
+                    CellComponent={ProjectsMobileCell}
                     onClose={closeModal}
                 />
             )}
