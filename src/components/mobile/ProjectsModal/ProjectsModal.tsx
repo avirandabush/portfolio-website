@@ -2,6 +2,9 @@ import { useEffect, useState, type ComponentType } from "react";
 import "./ProjectsModal.css";
 import type { Project } from "../../../types/Project";
 import { fetchProjects } from "../../../utils/ProjectsServise";
+import Loader from "../../shared/Loader";
+import EmptyCell from "../../shared/EmptyCell";
+import ErrorMessage from "../../shared/ErrorMessage";
 
 interface ProjectsModalProps {
     projectType: string
@@ -38,9 +41,9 @@ export default function ProjectsModal({ projectType, title, CellComponent, onClo
                     <button className="modal-close" onClick={onClose}>✕</button>
                 </div>
                 <div className="modal-body"><div className="modal-body">
-                    {loading && <div>Loading projects...</div>}
-                    {error && <div>{error}</div>}
-                    {!loading && !error && projects.length === 0 && <div>No projects found</div>}
+                    {loading && <Loader />}
+                    {error && <ErrorMessage message={error} />}
+                    {!loading && !error && projects.length === 0 && <EmptyCell name={title} />}
 
                     {!loading && !error && projects.length > 0 && (
                         <div className="projects-list">

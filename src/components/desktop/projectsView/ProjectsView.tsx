@@ -2,6 +2,9 @@ import { useState, useEffect, type ComponentType } from "react"
 import { fetchProjects } from "../../../utils/ProjectsServise"
 import type { Project } from "../../../types/Project"
 import next from "../../../assets/next-arrow.svg"
+import Loader from "../../shared/Loader"
+import EmptyCell from "../../shared/EmptyCell"
+import ErrorMessage from "../../shared/ErrorMessage"
 import "./ProjectsView.css"
 
 interface ProjectsViewProps {
@@ -48,11 +51,17 @@ const ProjectsView = ({ projectType, title, CellComponent }: ProjectsViewProps) 
             </div>
             <div className="projects-right">
                 {loading ? (
-                    <div className="projects-loader">Loading {title} Projects...</div>
+                    <div className="projects-loader">
+                        <Loader />
+                    </div>
                 ) : error ? (
-                    <div className="projects-error">{error}</div>
+                    <div className="projects-error">
+                        <ErrorMessage message={error} />
+                    </div>
                 ) : projects.length === 0 ? (
-                    <div className="projects-empty">No {title} projects found</div>
+                    <div className="projects-empty">
+                        <EmptyCell name={title} />
+                    </div>
                 ) : (
                     <>
                         {projects.length > 1 && (
