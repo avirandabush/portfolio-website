@@ -72,6 +72,13 @@ body {
   border: none;
 }
 
+.splash-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .container {
   width: calc(100% - 80px);
   height: calc(100% - 80px);

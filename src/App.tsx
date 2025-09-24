@@ -1,7 +1,8 @@
 import "./App.css"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Screen } from "./types/Screen"
 import { useDevice } from "./context/DeviceContext"
+import Loader from "./components/shared/Loader"
 import TopContactBar from "./components/desktop/contactBar/TopContactBar"
 import AppsDock from "./components/desktop/appsDock/AppsDock"
 import ContactDock from "./components/mobile/contactDock/ContactDock"
@@ -14,33 +15,49 @@ import ReactProjectsScreen from "./layouts/ReactProjectsScreen"
 import OtherProjectsScreen from "./layouts/OtherProjectsScreen"
 
 function App() {
-
   const [activeScreen, setActiveScreen] = useState<Screen>(Screen.Home);
+  const [isSplashVisible, setIsSplashVisible] = useState(true);
   const { isMobile } = useDevice();
 
-  const TopBar = isMobile 
-  ? <TopMobileBar onNavigate={setActiveScreen} />
-  : <TopContactBar onNavigate={setActiveScreen} />;
+  const TopBar = isMobile
+    ? <TopMobileBar onNavigate={setActiveScreen} />
+    : <TopContactBar onNavigate={setActiveScreen} />;
 
   const BottomBar = isMobile
     ? <ContactDock />
     : <AppsDock activeScreen={activeScreen} onNavigate={setActiveScreen} />;
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsSplashVisible(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className={`app ${isMobile ? 'mobile' : 'desktop'}`}>
       <div className={`container ${isMobile ? 'mobile' : 'desktop'}`}>
-        {TopBar}
+        {isSplashVisible ? (
+          <div className="splash-container">
+            <Loader />
+          </div>
+        ) : (
+          <>
+            {TopBar}
 
-        <div className="content">
-          {activeScreen === Screen.Home && <HomeScreen />}
-          {activeScreen === Screen.About && <AboutScreen onClose={() => setActiveScreen(Screen.Home)} />}
-          {activeScreen === Screen.iOS && <IosProjectsScreen />}
-          {activeScreen === Screen.Android && <AndroidProjectsScreen />}
-          {activeScreen === Screen.React && <ReactProjectsScreen />}
-          {activeScreen === Screen.Other && <OtherProjectsScreen />}
-        </div>
+            <div className="content">
+              {activeScreen === Screen.Home && <HomeScreen />}
+              {activeScreen === Screen.About && <AboutScreen onClose={() => setActiveScreen(Screen.Home)} />}
+              {activeScreen === Screen.iOS && <IosProjectsScreen />}
+              {activeScreen === Screen.Android && <AndroidProjectsScreen />}
+              {activeScreen === Screen.React && <ReactProjectsScreen />}
+              {activeScreen === Screen.Other && <OtherProjectsScreen />}
+            </div>
 
-        {BottomBar}
+            {BottomBar}
+          </>
+        )}
       </div>
     </div>
   )
