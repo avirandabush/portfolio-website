@@ -1,5 +1,5 @@
 import type { Project } from "../../../types/Project"
-import LinkAndIconButton from "../linkAndIconButton/LinkAndIconButton"
+import LinkAndIconButton from "../../shared/linkAndIconButton/LinkAndIconButton"
 import gitIcon from "../../../assets/git-branch.svg"
 import gitIconLight from "../../../assets/git-branch-light.svg"
 import appStoreIcon from "../../../assets/app-store.svg"
