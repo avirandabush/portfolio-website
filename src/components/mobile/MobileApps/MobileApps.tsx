@@ -42,22 +42,22 @@ export default function MobileApps() {
                 <DockButton
                     icon={appleIcon}
                     alt="iOS Projects"
-                    onClick={() => openProjectsModal("iOS Projects", "ios")}
+                    onClick={() => openProjectsModal("iOS", "ios")}
                 />
                 <DockButton
                     icon={androidIcon}
                     alt="Android Projects"
-                    onClick={() => openProjectsModal("Android Projects", "android")}
+                    onClick={() => openProjectsModal("Android", "android")}
                 />
                 <DockButton
                     icon={reactIcon}
                     alt="React Projects"
-                    onClick={() => openProjectsModal("React Projects", "react")}
+                    onClick={() => openProjectsModal("React", "react")}
                 />
                 <DockButton
                     icon={otherIcon}
                     alt="Other Projects"
-                    onClick={() => openProjectsModal("Other Projects", "other")}
+                    onClick={() => openProjectsModal("Other", "other")}
                 />
                 <DockButton icon={cvIcon} alt="CV" onClick={handleDownloadCv} />
                 <DockButton
