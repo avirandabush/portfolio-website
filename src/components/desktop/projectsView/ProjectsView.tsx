@@ -25,7 +25,7 @@ const ProjectsView = ({ projectType, title, CellComponent }: ProjectsViewProps) 
                 const data = await fetchProjects(projectType)
                 setProjects(data)
             } catch (err) {
-                setError("Error fetching projects")
+                setError(`Error fetching ${title} projects`)
             } finally {
                 setLoading(false)
             }

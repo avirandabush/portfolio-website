@@ -1,12 +1,12 @@
 .mobile-cell-container {
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--secondary);
     border-radius: 16px;
     padding: 12px;
-    background-color: var(--primary);
     color: var(--light);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--primary);
+    border: 1px solid var(--secondary);
+    box-shadow: 0 2px 8px var(--shadow);
 }
 
 .mobile-project-header {

@@ -1,11 +1,11 @@
 import ProjectsView from "../components/desktop/projectsView/ProjectsView"
-import MobileProjectCell from "../components/desktop/projectCell/MobileProjectCell"
+import ProjectsDesktopCell from "../components/desktop/ProjectsDesktopCell/ProjectsDesktopCell"
 
 const IosProjectsScreen = () => (
     <ProjectsView
         projectType="ios"
         title="iOS"
-        CellComponent={MobileProjectCell}
+        CellComponent={ProjectsDesktopCell}
     />
 )
 

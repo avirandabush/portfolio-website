@@ -1,0 +1,138 @@
+.desktop-cell-container {
+    display: flex;
+    border-radius: 20px;
+    padding: 18px;
+    color: var(--light);
+    background-color: var(--primary);
+    border: 1px solid var(--secondary);
+    box-shadow: 0 4px 30px var(--light-shadow);
+}
+
+.desktop-cell-container.desktop {
+    flex-direction: column;
+    align-items: center;
+    min-height: 80%;
+    width: 90%;
+}
+
+.desktop-cell-container.desktop .desktop-video-section {
+    width: 100%;
+    margin-bottom: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.desktop-cell-container.desktop .desktop-device-frame {
+    width: 60%;
+    max-height: 250px;
+    aspect-ratio: 16/9;
+    border: 4px solid var(--dark);
+    border-radius: 6px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.desktop-cell-container.desktop .desktop-cell-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+}
+
+.desktop-cell-container.ios,
+.desktop-cell-container.android {
+    flex-direction: row;
+    gap: 16px;
+    align-items: stretch;
+}
+
+.desktop-cell-container.ios .desktop-video-section,
+.desktop-cell-container.android .desktop-video-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.desktop-cell-container.ios .desktop-device-frame,
+.desktop-cell-container.android .desktop-device-frame {
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 9 / 19.5;
+    border: 6px solid var(--dark);
+    overflow: hidden;
+}
+
+.desktop-cell-container.ios .desktop-device-frame {
+    border-radius: 18px;
+}
+
+.desktop-cell-container.android .desktop-device-frame {
+    border-radius: 12px;
+}
+
+.desktop-device-frame video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.desktop-cell-container.ios .desktop-cell-content,
+.desktop-cell-container.android .desktop-cell-content {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.desktop-cell-content h3 {
+    margin: 0;
+    margin-bottom: 8px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.desktop-date-string {
+    margin: 0;
+    font-size: 12px;
+    padding: 4px 16px;
+    border-radius: 16px;
+    color: var(--secondary);
+    background-color: var(--middle);
+    display: inline-block;
+    width: fit-content;
+}
+
+.desktop-project-description {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    padding: 8px;
+    flex: 1;
+    color: var(--light);
+}
+
+.desktop-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.desktop-tag {
+    background-color: var(--dark);
+    color: var(--secondary);
+    padding: 6px 12px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.desktop-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
